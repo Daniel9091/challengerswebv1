@@ -1,0 +1,28 @@
+<div class="container mt-5">
+  <h1 class="text-center mb-4"><%= @organization.name %></h1>
+
+  <div class="card shadow border-0 rounded-lg">
+    <!-- Espacio para la imagen de la organización -->
+    <%# <img src="<%= @organization.image_url || 'default-image-url.jpg' %>" class="card-img-top" alt="<%= @organization.name %> Image" style="height: 300px; object-fit: cover;"> %>
+
+    <div class="card-body">
+      <h5 class="card-title">Details</h5>
+      <p class="card-text">
+        <strong>Description:</strong>
+        <%= @organization.description %>
+      </p>
+
+      <!-- Aquí puedes incluir etiquetas, si es necesario -->
+      <div class="mb-3">
+        <%# <% @organization.tags.each do |tag| %> %>
+          <%# <span class="badge rounded-pill me-1" style="background-color: <%= tag.color %>;"><%= tag.name %></span> %>
+        <%# <% end %> %>
+      </div>
+
+      <div class="d-flex justify-content-between mt-4">
+        <%= link_to 'Back to Organizations', organizations_path, class: 'btn btn-outline-secondary' %>
+        <%# <%= link_to 'Edit', edit_organization_path(@organization), class: 'btn btn-primary' %> %>
+      </div>
+    </div>
+  </div>
+</div>

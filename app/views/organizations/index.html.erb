@@ -1,0 +1,28 @@
+<h1 class="text-center mb-4">Organizations</h1>
+
+<div class="container">
+  <div class="row">
+    <% @organizations.each do |organization| %>
+      <div class="col-md-4 mb-4">
+        <div class="card shadow-sm">
+          <!-- Espacio para la imagen del proyecto -->
+          <%# <img src="<%= organization.image_url || 'default-image-url.jpg' %>" class="card-img-top" alt="<%= organization.name %> Image" style="height: 200px; object-fit: cover;"> %>
+
+          <div class="card-body">
+            <!-- Espacio para las etiquetas -->
+            <div class="mb-2">
+              <% organization.tags.each do |tag| %>
+                <%# <span class="badge" style="background-color: <%= tag.color %>;"><%= tag.name %></span> %>
+              <% end %>
+            </div>
+            <h5 class="card-title"><%= organization.name %></h5>
+            <p class="card-text">
+              <%= organization.description %>
+            </p>
+            <a href="<%= organization_path(organization) %>" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
